@@ -3,10 +3,14 @@ Include(FetchContent)
 FetchContent_Declare(
   Catch2
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG        v3.4.0 # or a later release
+  GIT_TAG        v3.8.0 # or a later release
 )
 
 FetchContent_MakeAvailable(Catch2)
+
+# set code coverage
+include(CodeCoverage)
+append_coverage_compiler_flags()
 
 include(CTest)
 include(Catch)
@@ -23,5 +27,3 @@ target_link_libraries(all_tests
 )
 
 catch_discover_tests(all_tests)
-
-set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -fprofile-arcs -ftest-coverage")
