@@ -3,6 +3,10 @@ add_library(libstreaming OBJECT
   src/MessageStreaming.cpp
 )
 
+# set code coverage
+include(CodeCoverage)
+append_coverage_compiler_flags()
+
 target_include_directories(libstreaming
   PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/inc

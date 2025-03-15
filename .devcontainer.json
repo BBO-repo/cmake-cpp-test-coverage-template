@@ -1,12 +1,12 @@
 {
-	"name": "coderbyte",
+	"name": "cmake-gcov",
 	"build": {
 		"dockerfile": "./Dockerfile",
 		"context": ".",
 		"args": {}
 	},
 	"runArgs": [
-		"--name=cmake-template",
+		"--name=cmake-gcov",
 		"--net=host",
 		"-e", "DISPLAY=${env:DISPLAY}",
 		"-e", "QT_X11_NO_MITSHM=1",

@@ -13,12 +13,15 @@ include(Catch)
 
 enable_testing()
 
-add_executable(tests MathProcessor.t.cpp)
-target_link_libraries(tests
+add_executable(all_tests MathProcessor.t.cpp MessageStreaming.t.cpp)
+include_directories(PUBLIC ${CMAKE_SOURCE_DIR}/lib/processing/inc)
+target_link_libraries(all_tests
   PRIVATE
     Catch2::Catch2WithMain
     libprocessing
     libstreaming
 )
 
-catch_discover_tests(tests)
+catch_discover_tests(all_tests)
+
+set(CMAKE_EXE_LINKER_FLAGS_DEBUG "${CMAKE_EXE_LINKER_FLAGS_DEBUG} -fprofile-arcs -ftest-coverage")

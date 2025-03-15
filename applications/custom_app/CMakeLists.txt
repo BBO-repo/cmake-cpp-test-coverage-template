@@ -4,6 +4,10 @@ add_executable(custom_app
   src/AwesomeClass.cpp
 )
 
+# set code coverage
+include(CodeCoverage)
+append_coverage_compiler_flags()
+
 # include directories
 target_include_directories(custom_app
   PRIVATE
@@ -18,4 +22,3 @@ target_link_libraries(custom_app
 )
 
 # target_include_directories()
-
