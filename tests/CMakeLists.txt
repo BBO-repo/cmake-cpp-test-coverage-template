@@ -8,6 +8,11 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
+include(CTest)
+include(Catch)
+
+enable_testing()
+
 add_executable(tests MathProcessor.t.cpp)
 target_link_libraries(tests
   PRIVATE
@@ -15,3 +20,5 @@ target_link_libraries(tests
     libprocessing
     libstreaming
 )
+
+catch_discover_tests(tests)

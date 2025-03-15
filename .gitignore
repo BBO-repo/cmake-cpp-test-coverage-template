@@ -33,3 +33,6 @@
 
 # cmake
 build/
+
+# miscallenous (only for local code snippint, notes or testing)
+misc/
