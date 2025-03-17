@@ -3,8 +3,10 @@ add_library(libprocessing SHARED
   src/MathProcessor.cpp
 )
 
-# set code coverage
-append_coverage_compiler_flags()
+if(COVERAGE)
+  # set code coverage
+  append_coverage_compiler_flags()
+endif()
 
 target_include_directories(libprocessing
   PUBLIC

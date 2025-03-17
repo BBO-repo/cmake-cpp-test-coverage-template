@@ -7,9 +7,14 @@ project(cmake_template)
 # Set the C++ standard to C++11
 set(CMAKE_CXX_STANDARD 11)
 
-# Add custom cmake modules
-list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake-modules)
-include(CodeCoverage)
+option(COVERAGE "Enable COVERAGE" OFF)
+message(STATUS "COVERAGE ${COVERAGE}")
+if(COVERAGE)
+  set(CMAKE_BUILD_TYPE Debug)
+  # Add custom cmake modules
+  list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake-modules)
+  include(CodeCoverage)
+endif()
 
 # Add subdirectories
 add_subdirectory(${CMAKE_SOURCE_DIR}/lib/processing)

@@ -3,8 +3,10 @@ add_library(libstreaming OBJECT
   src/MessageStreaming.cpp
 )
 
-# set code coverage
-append_coverage_compiler_flags()
+if(COVERAGE)
+  # set code coverage
+  append_coverage_compiler_flags()
+endif()
 
 target_include_directories(libstreaming
   PUBLIC

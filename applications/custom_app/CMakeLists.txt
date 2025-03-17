@@ -4,9 +4,10 @@ add_executable(custom_app
   src/AwesomeClass.cpp
 )
 
-# set code coverage
-# uncomment if want to also check coverage for application layers
-# append_coverage_compiler_flags()
+if(COVERAGE)
+  # set code coverage
+  append_coverage_compiler_flags()
+endif()
 
 # include directories
 target_include_directories(custom_app

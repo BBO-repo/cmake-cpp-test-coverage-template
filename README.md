@@ -5,7 +5,7 @@ C++ cmake template for catch2 test and gcov coverage for libraries and applicati
 Inside the Docker container run the following commands to build the test executable and the custom application target:
 ```
 cd /workspace
-cmake -B build -S .
+cmake -B build -S . -DCOVERAGE=ON
 cmake --build build -j 10
 ```
 Run the test exectable to generate coverage data
