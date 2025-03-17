@@ -8,10 +8,6 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-# set code coverage
-include(CodeCoverage)
-append_coverage_compiler_flags()
-
 include(CTest)
 include(Catch)
 

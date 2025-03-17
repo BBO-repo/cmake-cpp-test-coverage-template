@@ -5,8 +5,8 @@ add_executable(custom_app
 )
 
 # set code coverage
-include(CodeCoverage)
-append_coverage_compiler_flags()
+# uncomment if want to also check coverage for application layers
+# append_coverage_compiler_flags()
 
 # include directories
 target_include_directories(custom_app
@@ -20,5 +20,3 @@ target_link_libraries(custom_app
     libprocessing
     libstreaming
 )
-
-# target_include_directories()

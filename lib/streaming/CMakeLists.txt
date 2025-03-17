@@ -4,7 +4,6 @@ add_library(libstreaming OBJECT
 )
 
 # set code coverage
-include(CodeCoverage)
 append_coverage_compiler_flags()
 
 target_include_directories(libstreaming

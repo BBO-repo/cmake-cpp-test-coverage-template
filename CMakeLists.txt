@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD 11)
 
 # Add custom cmake modules
 list(APPEND CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake-modules)
+include(CodeCoverage)
 
 # Add subdirectories
 add_subdirectory(${CMAKE_SOURCE_DIR}/lib/processing)
